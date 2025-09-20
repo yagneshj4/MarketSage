@@ -7,6 +7,7 @@ import { AnalysisCard } from './AnalysisCard';
 import { BrainCircuit, Clock, Database } from 'lucide-react';
 import { format, formatDistanceToNow } from 'date-fns';
 import { RebalanceSummaryCard } from './RebalanceSummaryCard';
+import { useEffect, useState } from 'react';
 
 type AnalysisDisplayProps = {
   analysis: AnalyzePortfolioOutput | null;
@@ -14,7 +15,19 @@ type AnalysisDisplayProps = {
 };
 
 export function AnalysisDisplay({ analysis, isLoading }: AnalysisDisplayProps) {
+  const [formattedDate, setFormattedDate] = useState({ distance: '', time: '', dataTime: '' });
   const generatedAt = analysis?.generatedAt ? new Date(analysis.generatedAt) : null;
+
+  useEffect(() => {
+    if (generatedAt) {
+      setFormattedDate({
+        distance: formatDistanceToNow(generatedAt, { addSuffix: true }),
+        time: format(generatedAt, "h:mm:ss a"),
+        dataTime: format(generatedAt, "h:mm a"),
+      });
+    }
+  }, [generatedAt]);
+
 
   return (
     <Card className="h-full min-h-[500px] flex flex-col shadow-sm">
@@ -25,16 +38,16 @@ export function AnalysisDisplay({ analysis, isLoading }: AnalysisDisplayProps) {
             <CardDescription className="flex items-center gap-2 !mt-2 text-xs">
               <Clock className="h-4 w-4 text-muted-foreground" />
               <span>
-                Analyzed {formatDistanceToNow(generatedAt, { addSuffix: true })}
+                Analyzed {formattedDate.distance}
               </span>
               <span className='text-muted-foreground'>
-                ({format(generatedAt, "h:mm:ss a")})
+                ({formattedDate.time})
               </span>
             </CardDescription>
             <CardDescription className="flex items-center gap-2 !mt-1 text-xs">
                 <Database className="h-4 w-4 text-muted-foreground" />
                 <span>
-                    Data updated via Pathway at {format(generatedAt, "h:mm a")}
+                    Data updated via Pathway at {formattedDate.dataTime}
                 </span>
             </CardDescription>
           </div>
