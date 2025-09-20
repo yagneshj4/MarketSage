@@ -16,18 +16,19 @@ type AnalysisDisplayProps = {
 
 export function AnalysisDisplay({ analysis, isLoading }: AnalysisDisplayProps) {
   const [formattedDate, setFormattedDate] = useState({ distance: '', time: '', dataTime: '' });
-  const generatedAt = analysis?.generatedAt ? new Date(analysis.generatedAt) : null;
-
+  
   useEffect(() => {
-    if (generatedAt) {
+    if (analysis?.generatedAt) {
+      const generatedAtDate = new Date(analysis.generatedAt);
       setFormattedDate({
-        distance: formatDistanceToNow(generatedAt, { addSuffix: true }),
-        time: format(generatedAt, "h:mm:ss a"),
-        dataTime: format(generatedAt, "h:mm a"),
+        distance: formatDistanceToNow(generatedAtDate, { addSuffix: true }),
+        time: format(generatedAtDate, "h:mm:ss a"),
+        dataTime: format(generatedAtDate, "h:mm a"),
       });
     }
-  }, [generatedAt]);
+  }, [analysis?.generatedAt]);
 
+  const generatedAt = analysis?.generatedAt;
 
   return (
     <Card className="h-full min-h-[500px] flex flex-col shadow-sm">
