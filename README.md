@@ -2,8 +2,28 @@
 
 **AI-Powered Stock Portfolio Analysis for Indian Markets**
 
-Get personalized investment advice powered by Google's Gemini AI. Analyze your portfolio and receive smart buy/sell/hold
-recommendations.
+MarketSage is an intelligent investment advisor designed specifically for the Indian stock market. Powered by Google's
+advanced Gemini AI, it analyzes your portfolio holdings and provides personalized, actionable investment recommendations
+in simple language.
+
+### 💡 What MarketSage Does
+
+MarketSage helps investors make smarter decisions by:
+
+- **📈 Analyzing Your Portfolio** - Upload your stock holdings (NSE/BSE) with shares and purchase prices, plus available
+  cash
+- **🤖 AI-Powered Insights** - Google Gemini AI evaluates each stock based on current market trends, risk levels, and
+  portfolio balance
+- **💰 Smart Recommendations** - Get clear buy/sell/hold/diversify advice with specific rupee amounts and detailed
+  reasoning
+- **⚠️ Risk Assessment** - Understand the risk level (low/medium/high) of each investment
+- **🎯 Portfolio Optimization** - Detect over-concentration in single stocks and get diversification suggestions
+- **👥 Beginner-Friendly** - All advice explained in simple, encouraging language without complex financial jargon
+
+**Perfect for beginners and experienced investors who want AI-powered insights to optimize their Indian stock
+portfolios.**
+
+---
 
 **Developer**: Yagnesh Yallapu  
 **Contact**: yagneshyallapu@gmail.com  
