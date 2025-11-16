@@ -1,6 +1,13 @@
 {
-  "name": "nextn",
-  "version": "0.1.0",
+  "name": "marketsage",
+  "version": "2.0.0",
+  "description": "AI-Powered Stock Portfolio Analysis for Indian Markets",
+  "author": "Yagnesh Yallapu <yagneshyallapu@gmail.com>",
+  "homepage": "https://market-sage-steel.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yagneshj4/MarketSage"
+  },
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack -p 9002",
