@@ -1,9 +1,9 @@
-import { StockSageApp } from "@/components/stocksage/StockSageApp";
+import {MarketSageApp} from "@/components/MarketSage";
 
 export default function Home() {
-  return (
-    <main>
-      <StockSageApp />
+    return (
+        <main>
+            <MarketSageApp />
     </main>
   );
 }
